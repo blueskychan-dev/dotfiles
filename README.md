@@ -7,7 +7,7 @@
 # What changes from original fork?
 - use picom compositor for transparent effect and etc.
 - use zsh for deafult shell
-- few changes on polybar and startup scripts
+- few changes on polybar and startup scripts (need to edit manually)
 
 ## Installation
 
@@ -40,6 +40,7 @@ After the installation is finished the script will automaticly reboot into the n
 <div align = left><br><br>
  
 ## Keybinds
+- Notice: any keybinds it mentionn (manually) message, it's mean you need to read my notice (Scroll Down)
 
 | Keys | Action |
 | :--  | :-- |
@@ -59,8 +60,8 @@ After the installation is finished the script will automaticly reboot into the n
 | <kbd>Super</kbd> + <kbd>NUMBER</kbd> | switch to workspace
 | <kbd>Super</kbd> + <kbd>SHIFT</kbd> + <kbd>NUMBER</kbd> | move focused container to workspace
 | <kbd>Super</kbd> + <kbd>SHIFT</kbd> + <kbd>C</kbd> | reload the configuration file
-| <kbd>Super</kbd> + <kbd>Space</kbd> | Change Keyboard Languanges
-| <kbd>Super</kbd> + <kbd>P</kbd> | Disable/Enable picom
+| <kbd>Super</kbd> + <kbd>Space</kbd> | Change Keyboard Languanges (manually)
+| <kbd>Super</kbd> + <kbd>P</kbd> | Disable/Enable picom (manually)
 | <kbd>Super</kbd> + <kbd>SHIFT</kbd> + <kbd>R</kbd> | restart i3
 | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> | quit i3 session
 
@@ -100,7 +101,12 @@ After the installation is finished the script will automaticly reboot into the n
 | <kbd>Super</kbd> + <kbd>D</kbd> | focus the child container
 
 <div align = left><br><br>
- 
+
+## Notices
+- For layout support, please read and edit lines [i3-wm configs ~/.config/i3/config:224](https://github.com/blueskychan-dev/dotfiles/blob/65e299969d30c6d0dd8699a2574b43095686479a/src/config/i3/config#L224) and [polybar ~/.config/i3/config.ini:160](https://github.com/blueskychan-dev/dotfiles/blob/65e299969d30c6d0dd8699a2574b43095686479a/src/config/polybar/config.ini#L160)
+- For GPU Stats support, if you use nvidia, please read and edit lines [polybar ~/.config/polybar/config.ini:167](https://github.com/blueskychan-dev/dotfiles/blob/65e299969d30c6d0dd8699a2574b43095686479a/src/config/polybar/config.ini#L167) or if you wish to make other gpu support, please edit with yourself.
+- If you have problem with authentication on visual studio code or other, please read and edit lines [i3-wm configs ~/.config/i3/config:226](https://github.com/blueskychan-dev/dotfiles/blob/65e299969d30c6d0dd8699a2574b43095686479a/src/config/i3/config#L226)
+- If you use laptop and control brightness by keyboard, please read and edit this [i3-wm configs ~/.config/i3/config:220](https://github.com/blueskychan-dev/dotfiles/blob/65e299969d30c6d0dd8699a2574b43095686479a/src/config/i3/config#L220)
 ## Credits
 
  - neofetch : https://github.com/prasanthrangan/hyprdots
