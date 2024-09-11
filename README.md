@@ -1,17 +1,14 @@
-<div align = center><h1>Justus0405 i3-wm Catppuccin Dotfiles</h1><br><br>
+<div align = center><h1>blueskychan_ i3-wm Catppuccin Dotfiles/ZSH theme and etc.</h1>
 <div align = left>
  
-> One config per application philosophy <br>
-> Why? Because I have OCD
+> Original fork from: Justus0405
+<div align = left>
 
-> xf86-input-evdev instead of libinput <br> 
-> Why? Because it has way better latency and accuracy
+# What changes from original fork?
+- use picom compositor for transparent effect and etc.
+- use zsh for deafult shell
+- few changes on polybar and startup scripts
 
-> No Compositor, Compositorless <br>
-> Why? Because it has better performance and latency especially on lower end hardware, plus they tend to break multi-monitor setups
-
-<div align = left><br><br>
- 
 ## Installation
 
 The installation script is made for Arch, but **may** work on some Arch based distros with **systemd**.
@@ -23,8 +20,8 @@ After a minimal Arch install (with grub and systemd), execute -
 
 ```shell
 pacman -Syy git
-git clone https://github.com/Justus0405/i3wm-dotfiles.git
-cd i3wm-dotfiles/src/
+git clone https://github.com/blueskychan-dev/dotfiles.git
+cd dotfiles/src/
 chmod +x install.sh
 ./install.sh
 ```
@@ -36,8 +33,8 @@ After the installation is finished the script will automaticly reboot into the n
 ## Screenshots
 
 <div align="center"><table><tr><td>Desktop Clear</td><td>Desktop Busy</td></tr><tr><td>
-<img src="https://github.com/Justus0405/i3wm-dotfiles/assets/143542687/9b622c96-3b1d-4f45-88a1-db4771b4491e"/></td><td>
-<img src="https://github.com/Justus0405/i3wm-dotfiles/assets/143542687/7692a7af-d621-4142-b63a-baeb354c0933"/></td></tr>
+<img src="https://github.com/user-attachments/assets/9dee2fe0-cb8c-4cbd-88f4-8c33b1f5acc2"/></td><td>
+<img src="https://github.com/user-attachments/assets/8244cad7-7dbf-408d-8213-92222083e143"/></td></tr>
 </table></div>
 
 <div align = left><br><br>
@@ -62,6 +59,8 @@ After the installation is finished the script will automaticly reboot into the n
 | <kbd>Super</kbd> + <kbd>NUMBER</kbd> | switch to workspace
 | <kbd>Super</kbd> + <kbd>SHIFT</kbd> + <kbd>NUMBER</kbd> | move focused container to workspace
 | <kbd>Super</kbd> + <kbd>SHIFT</kbd> + <kbd>C</kbd> | reload the configuration file
+| <kbd>Super</kbd> + <kbd>Space</kbd> | Change Keyboard Languanges
+| <kbd>Super</kbd> + <kbd>P</kbd> | Disable/Enable picom
 | <kbd>Super</kbd> + <kbd>SHIFT</kbd> + <kbd>R</kbd> | restart i3
 | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> | quit i3 session
 
@@ -105,6 +104,7 @@ After the installation is finished the script will automaticly reboot into the n
 ## Credits
 
  - neofetch : https://github.com/prasanthrangan/hyprdots
+ - i3-dotfiles : https://github.com/Justus0405/i3wm-dotfiles
  - alacritty : https://github.com/catppuccin/alacritty
  - rofi : https://github.com/catppuccin/rofi
  - GTK : https://github.com/catppuccin/gtk
