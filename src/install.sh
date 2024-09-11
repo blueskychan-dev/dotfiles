@@ -12,9 +12,9 @@ CONFIRM_INSTALLATION() {
 ╭──────────────────────────────────────────────────╮
 │                                                  │
 │ Catppuccin Dotfiles                              │
-│ By Justus0405                                    │
+│ By blueskychan_ (Fork from: Justus0405)          │
 │                                                  │
-│ Installer Version 1.3                            │
+│ Installer Version 1.4                            │
 │                                                  │
 ╰──────────────────────────────────────────────────╯
 
@@ -53,13 +53,13 @@ EOF
 	echo -e "2) Standard"
  	echo -e "\tPackages : Window Manager, Login Manager, File Manager, Fonts, Icons, Audio, Input, Screenshots,"
   	echo -e "\t           Calculator, Disk Utility, Yay"
- 	echo -e "\tBrowser  : Brave"
+ 	echo -e "\tBrowser  : Vivaldi"
   	echo -e "\tMedia    : Totem, Loupe"
    	echo -e ""
 	echo -e "3) Full"
 	echo -e "\tPackages : Window Manager, Login Manager, File Manager, Fonts, Icons, Audio, Input, Screenshots,"
  	echo -e "\t           Calculator, Disk Utility, Yay, Color Manager, ffmpeg, OBS, GIMP, Steam, VSCode, Vesktop, Prismlauncher, yt-dlp"
- 	echo -e "\tBrowser  : Brave"
+ 	echo -e "\tBrowser  : Brave, Vivaldi"
   	echo -e "\tMedia    : Totem, Loupe"
    	echo -e ""
 
@@ -151,16 +151,16 @@ EOF
 	case $edition in
 		0)
 			# Minimal
-			sudo pacman -S --needed alacritty bash-completion chromium flameshot gnu-free-fonts gst-plugin-pipewire i3-wm lib32-pipewire nemo nemo-audio-tab nemo-fileroller nemo-image-converter nemo-share nitrogen papirus-icon-theme pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse polybar qt5-graphicaleffects qt5-quickcontrols2 qt5-svg rofi rtkit sddm ttf-jetbrains-mono ttf-jetbrains-mono-nerd unzip wget wireplumber xf86-input-evdev xf86-input-synaptics
+			sudo pacman -S --needed alacritty bash-completion chromium flameshot gnu-free-fonts gst-plugin-pipewire i3-wm lib32-pipewire nemo nemo-audio-tab nemo-fileroller nemo-image-converter nemo-share nitrogen papirus-icon-theme pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse polybar qt5-graphicaleffects qt5-quickcontrols2 qt5-svg rofi rtkit sddm ttf-jetbrains-mono ttf-jetbrains-mono-nerd unzip wget wireplumber xf86-input-evdev xf86-input-synaptics nerd-fonts
 			sed -i 's/brave/chromium/g' $DIRMAIN/config/i3/config
 		;;
 		1)
 			# Standard
-			sudo pacman -S --needed alacritty bash-completion flameshot fuse gnome-calculator gnome-disk-utility gnome-text-editor gnu-free-fonts gst-libav gst-plugin-pipewire gst-plugins-ugly gvfs gvfs-smb htop i3-wm lib32-pipewire loupe lxappearance-gtk3 nano nemo nemo-audio-tab nemo-fileroller nemo-image-converter nemo-share neofetch nitrogen ntfs-3g pacman-contrib papirus-icon-theme pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse polybar qt5-graphicaleffects qt5-quickcontrols2 qt5-svg rofi rtkit sddm totem ttf-jetbrains-mono ttf-jetbrains-mono-nerd unzip wget wireplumber xf86-input-evdev xf86-input-synaptics
+			sudo pacman -S --needed alacritty bash-completion flameshot fuse gnome-calculator gnome-disk-utility gnome-text-editor gnu-free-fonts gst-libav gst-plugin-pipewire gst-plugins-ugly gvfs gvfs-smb htop i3-wm lib32-pipewire loupe lxappearance-gtk3 nano nemo nemo-audio-tab nemo-fileroller nemo-image-converter nemo-share neofetch nitrogen ntfs-3g pacman-contrib papirus-icon-theme pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse polybar qt5-graphicaleffects qt5-quickcontrols2 qt5-svg rofi rtkit sddm totem ttf-jetbrains-mono ttf-jetbrains-mono-nerd unzip wget wireplumber xf86-input-evdev xf86-input-synaptics nerd-fonts
 		;;
 		2)
 			# Full
-			sudo pacman -S --needed alacritty bash-completion code ffmpeg flameshot fuse gimp gnome-calculator gnome-color-manager gnome-disk-utility gnome-text-editor gnu-free-fonts gst-libav gst-plugin-pipewire gst-plugins-ugly gvfs gvfs-smb htop i3-wm lib32-pipewire loupe lxappearance-gtk3 nano nemo nemo-audio-tab nemo-fileroller nemo-image-converter nemo-share neofetch nitrogen ntfs-3g nvtop obs-studio pacman-contrib papirus-icon-theme pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse polybar qt5-graphicaleffects qt5-quickcontrols2 qt5-svg rofi rtkit sddm steam totem ttf-jetbrains-mono ttf-jetbrains-mono-nerd unzip wget wireplumber xf86-input-evdev xf86-input-synaptics yt-dlp
+			sudo pacman -S --needed alacritty bash-completion code ffmpeg flameshot fuse gimp gnome-calculator gnome-color-manager gnome-disk-utility gnome-text-editor gnu-free-fonts gst-libav gst-plugin-pipewire gst-plugins-ugly gvfs gvfs-smb htop i3-wm lib32-pipewire loupe lxappearance-gtk3 nano nemo nemo-audio-tab nemo-fileroller nemo-image-converter nemo-share neofetch nitrogen ntfs-3g nvtop obs-studio pacman-contrib papirus-icon-theme pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse polybar qt5-graphicaleffects qt5-quickcontrols2 qt5-svg rofi rtkit sddm steam totem ttf-jetbrains-mono ttf-jetbrains-mono-nerd unzip wget wireplumber xf86-input-evdev xf86-input-synaptics yt-dlp nerd-fonts vivaldi-ffmpeg-codecs
 		;;
 	esac
 
@@ -212,12 +212,16 @@ EOF
 	unzip $DIRMAIN/assets/Catppuccin-Mocha-Standard-Mauve-Dark.zip -d ~/.local/share/themes/
 
 	# Nitrogen config
-	echo -e "[xin_-1]\nfile=/home/$USER/.config/wallpapers/scenery.png\nmode=5\nbgcolor=#000000" > $DIRMAIN/config/nitrogen/bg-saved.cfg
+	echo -e "[xin_-1]\nfile=/home/$USER/.config/wallpapers/97404620_p0.jpg\nmode=5\nbgcolor=#000000" > $DIRMAIN/config/nitrogen/bg-saved.cfg
 	echo -e "[geometry]\n\n[nitrogen]\nview=list\nrecurse=true\nsort=alpha\nicon_caps=false\ndirs=/home/$USER/.config/wallpapers;" > $DIRMAIN/config/nitrogen/nitrogen.cfg
 
 	# Polybar & .config
 	chmod +x $DIRMAIN/config/polybar/launch.sh
 	cp -r $DIRMAIN/config/* ~/.config/
+	mkdir ~/.config/polybar/scripts
+	cp -r $DIRMAIN/config/polybar/scripts/* ~/.config/polybar/scripts/
+	mdkir ~/.config/scripts
+	cp -r $DIRMAN/config/scripts/* ~/.config/scripts/
 
 	# SDDM Theme
 	sudo cp -r $DIRMAIN/assets/sddm/catppuccin-mocha /usr/share/sddm/themes/
@@ -226,6 +230,10 @@ EOF
 	# xf86-input-evdev
 	sudo mv /usr/share/X11/xorg.conf.d/40-libinput.conf ~/.config/
 	sudo cp -r $DIRMAIN/assets/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
+
+	# picom
+	mkdir -p ~/.config/picom
+	cp -r $DIRMAIN/config/picom/picom.conf ~/.config/picom/
 }
 
 # Function for enabling services
@@ -245,6 +253,20 @@ EOF
 	sudo systemctl disable gdm
 	sudo systemctl disable lightdm
 	sudo systemctl enable sddm
+}
+
+# Function for install zsh shell, execute this script (https://raw.githubusercontent.com/blueskychan-dev/ah-yes-zsh/master/install.sh)
+INSTALL_ZSH() {
+	clear
+	cat <<"EOF"
+╭──────────────────────────────────────────────────╮
+│                                                  │
+│ Installing ZSH...                                │
+│                                                  │
+╰──────────────────────────────────────────────────╯
+EOF
+
+	curl -fsSL https://raw.githubusercontent.com/blueskychan-dev/ah-yes-zsh/master/install.sh | bash
 }
 
 # Function for rebooting
@@ -269,6 +291,7 @@ EOF
 	sudo reboot now
 }
 
+
 # Step 1
 CONFIRM_INSTALLATION
 # Step 2
@@ -283,5 +306,7 @@ INSTALL_PACKAGES
 COPY_FILES
 # Step 7
 ENABLE_SERVICES
-# Step 8
+# Step 8 
+INSTALL_ZSH
+# Step 9
 FINISHED

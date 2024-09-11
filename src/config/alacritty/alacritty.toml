@@ -73,3 +73,20 @@ color = "#fab387"
 [[colors.indexed_colors]]
 index = 17
 color = "#f5e0dc"
+
+[window]
+opacity = 0.8
+
+[shell]
+program = "/usr/bin/zsh"
+
+[font.normal]
+family = "ComicShannsMonoNerdFont"
+style = "Regular"
+
+[font.bold]
+family = "ComicShannsMonoNerdFont"
+style = "Bold"
+
+[font]
+size = 12.0

@@ -24,8 +24,8 @@
 font pango:monospace 8
 
 default_border pixel 0
-gaps inner 10px
-gaps outer 10px
+gaps inner 4px
+gaps outer 4px
 smart_gaps inverse_outer
 
 # class                 border  backgr. text    indicator child_border
@@ -86,7 +86,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # start a apps
 bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+b exec --no-startup-id brave
+bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+e exec --no-startup-id nemo
 bindsym $mod+n exec --no-startup-id "flameshot gui"
 bindsym $mod+m exec --no-startup-id "flameshot screen"
@@ -216,3 +216,12 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym $mod+p exec --no-startup-id sh ~/.config/scripts/toggle_picom.sh
+# In case if you use laptop and want make brightness control working again, pacman -S brightnessctl and uncomment 2 lines below
+# bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
+# bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
+exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
+# If you want to use multiple keyboard layout, uncomment line below
+# exec setxkbmap -layout us,th -option grp:win_space_toggle
+# If you have problem with few problems like vscode for authentication failed, yay -S xfce-polkit and uncomment line below
+# exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
